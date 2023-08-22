@@ -5,12 +5,28 @@
   box-sizing: border-box;
 }
 
-.container{
+body{
+  background:linear-gradient(to bottom, #99ffcc 0%, #ff00ff 100%);
   width: 100%;
   min-height: 100vh;
-  background:linear-gradient(to bottom, #99ffcc 0%, #ff00ff 100%);
-  padding: 10px;
+  .wrapper {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    width: 100%;
+    .content {
+      flex-grow: 1;
+      width: 100%;
+    }
+  
+    .container{
+      width: 80%;
+      margin: 0 auto;
+      padding: 10px;
+    }
+  }
 }
+
 
 .todo-app{
   width: 100%;
@@ -40,11 +56,11 @@
   justify-content: space-between;
   background: #edeef0;
   border-radius: 30x;
-  padding-left: 20px;
   margin-bottom: 25px;
 }
 input{
   flex: 1;
+  width: 80%;
   border: none;
   outline: none;
   background: transparent;
@@ -118,6 +134,9 @@ footer{
   justify-content: center;
   background:linear-gradient(to bottom, #99ffcc 0%, #ff00ff 100%);
   font-size: 20px;
+  p{
+    text-align: center;
+  }
   a{
     text-decoration: none;
     color: #000099;
