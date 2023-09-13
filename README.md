@@ -20,7 +20,7 @@ Users should be able to:
 ### Screenshot
 
 - Desktop view: ![Alt text](<output/Desktop View.png>)
-- Mobile view: ![Alt text](<output/Mobile View.png>)
+- Mobile view: ![Alt text](<output/Mobile view.png>)
 
 ### Links
 
