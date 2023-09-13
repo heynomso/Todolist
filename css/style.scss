@@ -1,145 +1,100 @@
 *{
   margin: 0;
   padding: 0;
-  font-family: "Inter", "Lexend Deca";
   box-sizing: border-box;
+  font-family: 'Lato', sans-serif;
 }
 
 body{
-  background:linear-gradient(to bottom, #99ffcc 0%, #ff00ff 100%);
-  width: 100%;
-  min-height: 100vh;
-  .wrapper {
-    display: flex;
-    flex-direction: column;
-    height: 100vh;
-    width: 100%;
-    .content {
-      flex-grow: 1;
-      width: 100%;
-    }
-  
-    .container{
-      width: 80%;
-      margin: 0 auto;
-      padding: 10px;
-    }
-  }
-}
-
-
-.todo-app{
-  width: 100%;
-  max-width: 540px;
-  background: #fff;
-  margin: 100px auto 20px;
-  padding: 40px 30px 70px;
-  border-radius: 10px;
-
-  h2{
-    color: #002765;
-    display: flex;
-    align-items: center;
-    margin-bottom: 20px;
-  
-  }
-
-  i{
-    width: 30px;
-    margin-left: 10px;
-  }
-}
-
-.row{
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  background: #edeef0;
-  border-radius: 30x;
-  margin-bottom: 25px;
-}
-input{
-  flex: 1;
-  width: 80%;
-  border: none;
-  outline: none;
-  background: transparent;
-  padding: 10px;
-  font-weight: 14px;
-}
-
-button{
-  border: none;
-  outline: none;
-  padding: 16px 50px;
-  background: #ff00ff;
-  color: #fff;
-  font-size: 16px;
-  cursor: pointer;
-  border-radius: 40px;
-}
-
-ul{
-  li{
-  list-style: none;
-  font-size: 17px;
-  padding: 12px 8px 12px 50px;
-  user-select: none;
-  cursor: pointer;
-  position: relative;
-  }
-
-  li::before{
-  content: '';
-  position: absolute;
-  height: 28px;
-  width: 28px;
-  border-radius: 50%;
-  background-image: url(../images/unchecked.png);
-  background-size: cover;
-  background-position: center;
-  top: 12px;
-  left: 8px;  
-  }
-
-  li.checked{
-  color: #555;
-  text-decoration: line-through;
-  }
-
-  li.checked::before{
-  background-image: url(../images/checked.png);
-  }
-
-  li span{
-    position: absolute;
-    right: 0;
-    top: 5px;
-    width: 40px;
-    height: 40px;
-    font-size: 22px;
-    color: #555;
-    line-height: 40px;
-    text-align: center;
-    border-radius: 50%;
-  }
-
-  li span:hover{
-    background: #edeef0;
-  }
-}
-
-footer{
+  height: 100vh;
+  background: url(../img/img.jpg) no-repeat center center/cover;
   display: flex;
   justify-content: center;
-  background:linear-gradient(to bottom, #99ffcc 0%, #ff00ff 100%);
-  font-size: 20px;
-  p{
-    text-align: center;
+  align-items: center;
+}
+
+#add-task-container{
+  width: 350px;
+  padding: 20px 10px;
+  background-color: #fff;
+  border-radius: 20px;
+  box-shadow: 0 0 3px;
+  margin-bottom: 20px;
+  display: flex;
+}
+
+input{
+  flex: 5;
+  margin-right: 10px;
+  border-radius: 10px;
+  font-size: 1.2rem;
+  padding: 5px;
+}
+
+#add-task{
+  flex: 1;
+  transition:.3s;
+  font-size: 1.2rem;
+  padding: 5px;
+  background-color: #fff;
+  color: green;
+  border: green solid 2px;
+  border-radius: 10px;
+
+  &:hover{
+    background-color: green;
+    color: #fff;
   }
-  a{
-    text-decoration: none;
-    color: #000099;
+}
+
+//  Styling for task which get added to to-do list
+
+.task{
+  width: 100%;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 0 3px;
+  padding: 5px;
+  margin-bottom: 5px;
+  display: flex;
+  justify-content: space-between;
+
+  li{
+    list-style: none;
+    flex: 4;
+    padding: 5px;
+    font-size: 1.3rem;
+    margin: 10px;
+  }
+
+  button{
+    flex: 1;
+    border-radius: 10px;
+    background-color: #fff;
+    cursor: pointer;
+  }
+
+  .checkTask{
+    color: orange;
+    margin-right: 5px;
+    border: solid 2px orange;
+    font-size: 1.5rem;
+
+    &:hover{
+      background-color: orange;
+      color: #fff;
+    }
+  }
+
+  .deleteTask{
+    color: red;
+    border: solid 2px red;
+    font-size: 1.3rem;
+
+    &:hover{
+      background-color: red;
+      color: white;
+    }
   }
 }
 

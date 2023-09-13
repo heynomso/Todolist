@@ -1,41 +1,49 @@
-const inputBox = document.getElementById("input-box");
-const listContainer = document.getElementById("list-container");
+// Variables
+const addTask = document.getElementById('add-task');
+const taskContainer = document.getElementById('task-container');
+const inputTask = document.getElementById('input-task');
 
-function addTask(){
-  if(inputBox.value === ''){
-    alert("You must write something!")
+// Event Listener for Add button
+
+addTask.addEventListener('click', function(){
+  
+  let task = document.createElement('div');
+  task.classList.add('task');
+
+  let li = document.createElement('li');
+  li.innerText = `${inputTask.value}`;
+  task.appendChild(li);
+
+  let checkButton = document.createElement("button");
+  checkButton.innerHTML = `<i class="fa-solid fa-check"></i>`;
+  checkButton.classList.add('checkTask');
+  task.appendChild(checkButton);
+
+  let deleteButton = document.createElement("button");
+  deleteButton.innerHTML = `<i class="fa-solid fa-trash-can"></i>`;
+  deleteButton.classList.add('deleteTask');
+  task.appendChild(deleteButton);
+
+  if(inputTask.value == ""){
+    alert('Please Enter a Task');
   }
   else{
-    let li =document.createElement("li");
-    li.innerHTML = inputBox.value;
-    listContainer.appendChild(li);
-    let span = document.createElement("span");
-    // Cross Icon
-    span.innerHTML = "\u00d7";
-    // Cross Icon
-    li.appendChild(span)
+    taskContainer.appendChild(task);
   }
 
-  inputBox.value = "";
-  saveData()
-}
+  inputTask.value= "";
 
-listContainer.addEventListener("click", function(e){
-  if(e.target.tagName === "LI"){
-    e.target.classList.toggle("checked");
-    saveData()
-  }
-  else if(e.target.tagName === "SPAN"){
-    e.target.parentElement.remove();
-    saveData()
-  }
-}, false);
+  checkButton.addEventListener('click', function(){
 
-function saveData(){
-  localStorage.setItem("data",  listContainer.innerHTML);
-}
+    checkButton.parentElement.style.textDecoration = "line-through"
+  });
 
-function showTask(){
-  listContainer.innerHTML = localStorage.getItem("data");
-}
-showTask();
+  deleteButton.addEventListener('click', function(){
+
+    let target = this;
+
+    target.parentElement.parentElement.remove();
+     
+  });
+
+});
