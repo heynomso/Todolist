@@ -29,7 +29,13 @@ function createTaskElement(taskData) {
 
   // Add event listeners for check, edit, and delete buttons
   checkButton.addEventListener('click', function () {
-    li.style.textDecoration = 'line-through';
+    if (li.style.textDecoration === 'line-through') {
+      li.style.textDecoration = 'none';
+      taskData.completed = false;
+    } else {
+      li.style.textDecoration = 'line-through';
+      taskData.completed = true;
+    }'line-through';
     fetch(`https://jsonplaceholder.typicode.com/todos/${taskData.id}`, {
       method: 'PUT',
       body: JSON.stringify({ completed: true }),
