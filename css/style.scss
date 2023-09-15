@@ -14,7 +14,7 @@ body{
 }
 
 #add-task-container{
-  width: 350px;
+  width: 100%;
   padding: 20px 10px;
   background-color: #fff;
   border-radius: 20px;
@@ -96,5 +96,26 @@ input{
       color: white;
     }
   }
+
+  .editTask{
+    color: green;
+    border: solid 2px green;
+    font-size: 1.3rem;
+    margin-right: 2px;
+
+    &:hover{
+    background-color: green;
+    color: white;
+  }
+  }
+}
+
+.container{
+  height: 50%;
+}
+
+.todo{
+  overflow-y: auto;
+  height: 100%;
 }
 
